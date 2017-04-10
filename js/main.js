@@ -1,2 +1,7 @@
-var textfile1 = readTextFile(resources/example1.txt);
-alert(textfile1);
+$(document).ready(function(){
+    $('.Preview').click(function(event) { 
+       var filepath = (event.target.id);
+       var example = readTextFile(filepath);
+	   alert(example);
+    });
+});

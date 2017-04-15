@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Editor</title>
+	<title id="title"></title>
 	<link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/quill.css">
 </head>
 <body>
-	<div id="toolbar">
-	  <!-- Add a bold button -->
-	  <button class="save">Save</button>
-	</div>
-	<div id="scrolling-container">
-	  <div id="editor">
-	  </div>
-	</div>
+	<form>
+		<input name="about" type="hidden">
+		<div id="toolbar">
+		  <button class="save" type="submit">Save</button>
+		</div>
+		<div id="scrolling-container">
+		  <div id="editor">
+		  </div>
+		  <input name="text" type="hidden">
+		</div>
+	</form>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="https://cdn.quilljs.com/1.0.0/quill.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
 	<!-- Initialize Quill editor -->
-	<script src="js/quill.js"></script>
-	<!-- <script type="text/javascript" src="js/quill.js"></script> -->
+	<script type="text/javascript" src="js/quill.js"></script>
 </body>
 </html>

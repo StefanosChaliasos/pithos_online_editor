@@ -6,13 +6,14 @@
 	<link rel="stylesheet" type="text/css" href="css/quill.css">
 </head>
 <body>
-	<form>
+	<form method="POST" action="handler.php">
 		<div id="toolbar">
 			<button class="save" type="submit">Save</button>
 		</div>
 		<div id="scrolling-container">
 			<div id="editor"></div>
 			<input name="text" type="hidden">
+			<input name="name" type="hidden">
 		</div>
 	</form>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>

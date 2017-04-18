@@ -69,4 +69,18 @@ function openEditor(filename, data, editorSettings, saveCallback) {
     
 }
 
+function modalPreview(filename, data, editorSettings) {
+    $('.modal-title').html(filename);
+    
+    // Create quill editor
+    var options = {
+        readOnly: true
+    };
+    var quill = new Quill('#editor', options);
+    
+    // set editor's data
+    quill.setText(data);
+    
+    $('#myModal').modal('show');
+}
 

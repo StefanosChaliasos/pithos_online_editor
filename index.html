@@ -13,6 +13,7 @@
 	<h3>Example 1</h3>
 	<button type="button" class="Preview" id="resources/example1.txt">Preview</button>
 	<button type="button" onClick="window.open('editor.html?source=resources/example1.txt')";>Edit</button>
+	<button type="button" class="Edit" id="resources/example1.txt">Modal Edit</button>
 	<h3>Example 2</h3>
 	<button type="button" class="Preview" id="resources/example2.txt">Preview</button>
 	<button type="button" onClick="window.open('editor.html?source=resources/example2.txt')";>Edit</button>
@@ -25,18 +26,41 @@
 
 
 	<!-- Modal -->
-	<div id="myModal" class="modal fade" role="dialog">
+	<div id="previewModal" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
 	    <!-- Modal content-->
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	        <h4 class="modal-title"></h4>
+	        <h4 class="preview-modal-title"></h4>
 	      </div>
 	      <div class="modal-body">
+			<div id="preview"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
-				<div id="editor"></div>
-
+	<!-- Edit Modal -->
+	<div id="editModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="edit-modal-title"></h4>
+	      </div>
+	      <div class="modal-body">
+			<form>
+				<div id="toolbar">
+					<button class="save" type="submit">Save</button>
+				</div>
+				<div id="scrolling-container">
+					<div id="editor"></div>
+					<input name="text" type="hidden">
+					<input name="name" type="hidden">
+				</div>
+			</form>
 	      </div>
 	    </div>
 	  </div>

@@ -70,17 +70,42 @@ function openEditor(filename, data, editorSettings, saveCallback) {
 }
 
 function modalPreview(filename, data, editorSettings) {
-    $('.modal-title').html(filename);
+    $('.preview-modal-title').html(filename);
     
     // Create quill editor
     var options = {
         readOnly: true
     };
-    var quill = new Quill('#editor', options);
+    var previewQuill = new Quill('#preview', options);
+    
+    // set editor's data
+    previewQuill.setText(data);
+    
+    $('#previewModal').modal('show');
+}
+
+function modalEdit(filename, data, editorSettings, saveCallback) {
+    // set modal title
+    $('.edit-modal-title').html(filename);
+    
+    // Create quill editor
+    var quill = new Quill('#editor', {
+        modules: {
+                toolbar: '#toolbar'
+              },
+        formats: [],
+        scrollingContainer: '#scrolling-container',
+        theme: 'snow'
+    });
+    
+    // make quill editor global
+    window.quill = quill;
     
     // set editor's data
     quill.setText(data);
     
-    $('#myModal').modal('show');
+    $('#editModal').modal('show');
+    
+    saveFile();
+    
 }
-

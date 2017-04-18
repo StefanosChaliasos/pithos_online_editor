@@ -6,4 +6,12 @@ $(document).ready(function(){
        // console.log(example.type); // undefined
 	   modalPreview(filename, data, "");
     });
+    
+    $('.Edit').click(function(event) { 
+       var filepath = (event.target.id);
+       var filename = filepath.replace(/^.*[\\\/]/, '');
+       var data = readTextFile(filepath);
+       // console.log(example.type); // undefined
+	   modalEdit(filename, data, "", saveFile);
+    });
 });

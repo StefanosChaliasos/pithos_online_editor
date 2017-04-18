@@ -6,7 +6,14 @@ var data = readTextFile(filepath);
 var filename = filepath.replace(/^.*[\\\/]/, '');
 
 // Set editor setiings
-var editorSettings = "";
+var editorSettings = {
+        modules: {
+                toolbar: '#toolbar'
+              },
+        formats: [],
+        scrollingContainer: '#scrolling-container',
+        theme: 'snow'
+};
 
 openEditor(filename, data, editorSettings, saveFile);
 

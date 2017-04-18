@@ -4,14 +4,24 @@ $(document).ready(function(){
        var filename = filepath.replace(/^.*[\\\/]/, '');
        var data = readTextFile(filepath);
        // console.log(example.type); // undefined
-	   modalPreview(filename, data, "");
+       var options = {
+        readOnly: true
+       };
+	   modalPreview(filename, data, options);
     });
     
     $('.Edit').click(function(event) { 
        var filepath = (event.target.id);
        var filename = filepath.replace(/^.*[\\\/]/, '');
        var data = readTextFile(filepath);
-       // console.log(example.type); // undefined
-	   modalEdit(filename, data, "", saveFile);
+       var options = {
+            modules: {
+                    toolbar: '#toolbar'
+                  },
+            formats: [],
+            scrollingContainer: '#scrolling-container',
+            theme: 'snow'
+       }
+	   modalEdit(filename, data, options, saveFile);
     });
 });

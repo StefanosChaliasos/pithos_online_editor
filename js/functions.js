@@ -50,14 +50,7 @@ function openEditor(filename, data, editorSettings, saveCallback) {
     document.getElementById("title").innerHTML = filename;
     
     // Create quill editor
-    var quill = new Quill('#editor', {
-        modules: {
-                toolbar: '#toolbar'
-              },
-        formats: [],
-        scrollingContainer: '#scrolling-container',
-        theme: 'snow'
-    });
+    var quill = new Quill('#editor', editorSettings);
     
     // make quill editor global
     window.quill = quill;
@@ -73,10 +66,7 @@ function modalPreview(filename, data, editorSettings) {
     $('.preview-modal-title').html(filename);
     
     // Create quill editor
-    var options = {
-        readOnly: true
-    };
-    var previewQuill = new Quill('#preview', options);
+    var previewQuill = new Quill('#preview', editorSettings);
     
     // set editor's data
     previewQuill.setText(data);
@@ -89,14 +79,7 @@ function modalEdit(filename, data, editorSettings, saveCallback) {
     $('.edit-modal-title').html(filename);
     
     // Create quill editor
-    var quill = new Quill('#editor', {
-        modules: {
-                toolbar: '#toolbar'
-              },
-        formats: [],
-        scrollingContainer: '#scrolling-container',
-        theme: 'snow'
-    });
+    var quill = new Quill('#editor', editorSettings);
     
     // make quill editor global
     window.quill = quill;
